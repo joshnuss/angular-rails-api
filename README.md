@@ -49,4 +49,4 @@ Run `grunt build` which copies all files to `/public`.
 
 ### Time for a coffee break?
 
-@joshnuss is a freelance software consultant. You can contact me at joshnuss@gmail.com
+@joshnuss is a freelance software consultant. joshnuss@gmail.com
