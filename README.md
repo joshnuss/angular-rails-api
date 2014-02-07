@@ -32,11 +32,11 @@ rails-api new <your-app-name> \
 
 ## Common Tasks
 
-- To build frontend: `cd frontend && grunt build`
-- To run frontend server: `cd frontend && grunt serve`
-- To run rails server: `rails server`
-- To run rails specs: `rake spec`
-- To run angular specs: `cd frontend && grunt test`
+- To build the frontend: `cd frontend && grunt build`
+- To run the frontend server: `cd frontend && grunt serve`
+- To run the rails server: `rails server`
+- To run the rails specs: `rake spec`
+- To run the angular specs: `cd frontend && grunt test`
 
 ## Development Mode
 
