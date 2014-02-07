@@ -1,6 +1,6 @@
 # Rails API + Angular Template
 
-Creates a *rails-api* application with an *angular* frontend. The frontend is code located in `<your-app>/frontend` frontend.
+Creates a **rails-api** application with an **angular** frontend. The frontend code will be located in the `<your-app>/frontend` folder.
 
 ## Usage
 
@@ -37,6 +37,11 @@ rails-api new <your-app-name> \
 - To run rails server: `rails server`
 - To run rails specs: `rake spec`
 - To run angular specs: `cd frontend && grunt test`
+
+## Development Mode
+
+In dev mode, you need to run both the frontend node server `grunt serve` and the rails server `rails server`
+All requests are served from the frontend server, requests to `/api` are proxied to rails.
 
 ## Deployment
 
