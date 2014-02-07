@@ -1,6 +1,6 @@
 # Rails API + Angular Template
 
-Creates a **rails-api** application with an **angular** frontend. The frontend code will be located in the `<your-app>/frontend` folder.
+Creates a **rails-api** backend with an **angular** frontend. The frontend code will be located in the `<your-app>/frontend` folder.
 
 ## Usage
 
