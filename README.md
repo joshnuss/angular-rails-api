@@ -13,22 +13,23 @@ rails-api new <your-app-name> \
 
 ## Features
 
-- rails-api
-- grunt
-- slim
-- sass
-- coffeescript
-- bootstrap
-- live-reload
-- rspec
-- jbuilder
+- [rails-api](https://github.com/rails-api/rails-api)
+- [grunt](http://gruntjs.com/)
+- [slim](https://github.com/slim-template/slim)
+- [sass](http://sass-lang.com/)
+- [coffeescript](http://coffeescript.org/)
+- [bootstrap](http://getbootstrap.com/)
+- [live-reload](http://livereload.com/)
+- [rspec](https://relishapp.com/rspec)
+- [jbuilder](https://github.com/rails/jbuilder)
+- [yeoman](http://yeoman.io/)
 
 ## Requirements
 
-- rails-api
-- nodejs
-- grunt-cli
-- yo
+- [rails-api](https://github.com/rails-api/rails-api)
+- [nodejs](http://nodejs.org/)
+- [grunt-cli](http://gruntjs.com/)
+- [yeoman](http://yeoman.io/)
 
 ## Common Tasks
 
