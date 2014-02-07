@@ -1,11 +1,14 @@
-# Rails API + Angular Application Template
+# Rails API + Angular Template
 
-Creates a rails-api application with an angular frontend. The frontend is code located in `<your-app>/frontend`.
+Creates a *rails-api* application with an *angular* frontend. The frontend is code located in `<your-app>/frontend` frontend.
 
 ## Usage
 
 ```
-rails-api <your-app-name> -S -T -m http://github.com/joshnuss/angular-rails-api/raw/master/template.rb
+rails-api new <your-app-name> \
+  --skip-sprockets \
+  --skip-test-unit \
+  --template=https://github.com/joshnuss/angular-rails-api/raw/master/template.rb
 ```
 
 ## Features
