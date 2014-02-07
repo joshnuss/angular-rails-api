@@ -47,6 +47,11 @@ All requests are served from the frontend server, requests to `/api` are proxied
 
 Run `grunt build` which copies all files to `/public`. Only rails is needed in production.
 
+## Links
+
+1. [Working with Angular.js and Rails](http://rockyj.in/2013/10/24/angular_rails.html)
+2. [grunt-slim](https://github.com/matsumos/grunt-slim)
+
 ### Time for a coffee break?
 
 @joshnuss is a freelance software consultant. joshnuss@gmail.com
