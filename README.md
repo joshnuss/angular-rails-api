@@ -1,6 +1,6 @@
 # Rails API + Angular Template
 
-Creates a **rails-api** backend with an **angular** frontend. The frontend code will be located in the `<your-app>/frontend` folder.
+Creates a **rails-api** backend with an **angular** frontend. The frontend code will be located in `<your-rails-app>/frontend/`.
 
 ## Usage
 
@@ -45,7 +45,7 @@ All requests are served from the frontend server, requests to `/api` are proxied
 
 ## Deployment
 
-Run `grunt build` which copies all files to `/public`.
+Run `grunt build` which copies all files to `/public`. Only rails is needed in production.
 
 ### Time for a coffee break?
 
