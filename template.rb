@@ -537,7 +537,7 @@ module.exports = function (grunt) {
 };
 CODE
 
-  run "sudo npm install grunt-slim grunt-connect-proxy --save-dev"
+  run "npm install grunt-slim grunt-connect-proxy --save-dev"
 end
 
 git :init
