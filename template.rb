@@ -1,5 +1,4 @@
 gem 'jbuilder'
-gem 'slim'
 
 gem_group :development, :test do
   gem 'rspec-rails'
@@ -39,7 +38,7 @@ inside("frontend") do
   run "rm app/scripts/controllers/main.coffee"
   run "rm Gruntfile.js"
 
-  file 'app/views/main.slim', <<-CODE
+  file 'app/views/main.jade', <<-CODE
 h1 My Application
 
 ul
@@ -90,6 +89,13 @@ module.exports = function (grunt) {
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
+  var jadeFiles = grunt.file.expand('app/views/{,*/}*.jade');
+  var htmlFiles = {};
+
+  jadeFiles.forEach(function(file) {
+    htmlFiles[file.replace(/.jade$/, ".html").replace(/^app\\/views/, ".tmp/views")] = [file];
+  });
+
   // Define the configuration for all the tasks
   grunt.initConfig({
 
@@ -100,11 +106,19 @@ module.exports = function (grunt) {
       dist: '../public'
     },
 
+    mkdir: {
+      all: {
+        options: {
+          create: ['.tmp']
+        },
+      },
+    },
+
     // Watches files for changes and runs tasks based on the changed files
     watch: {
-      slim: {
-        files: ['<%= yeoman.app %>/views/{,*/}*.slim'],
-        tasks: ['slim']
+      jade: {
+        files: ['<%= yeoman.app %>/views/{,*/}*.jade'],
+        tasks: ['jade']
       },
       coffee: {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.{coffee,litcoffee,coffee.md}'],
@@ -144,7 +158,7 @@ module.exports = function (grunt) {
         livereload: 35729
       },
       proxies: [{
-        context: '/api/v1',
+        context: '/api',
         host: 'localhost',
         port: 3000
       }],
@@ -156,7 +170,6 @@ module.exports = function (grunt) {
             '<%= yeoman.app %>'
           ],
           middleware: function (connect) {
-            grunt.log.write("sdfsdsdfsfdsdfsdf");
             return [proxySnippet,
                     mountFolder(connect, '.tmp'),
                     mountFolder(connect, 'app')];
@@ -256,16 +269,10 @@ module.exports = function (grunt) {
       }
     },
 
-    slim: {                              // Task
-      dist: {                            // Target
-        files: [{
-          trace: true,
-          expand: true,
-          cwd: 'app/views',
-          src: ['{,*/}*.slim'],
-          dest: '.tmp/views',
-          ext: '.html'
-        }]
+    // Compiles Jade to HTML
+    jade: {
+      compile: {
+        files: htmlFiles
       }
     },
 
@@ -430,7 +437,7 @@ module.exports = function (grunt) {
     concurrent: {
       server: [
         'coffee:dist',
-        'slim',
+        'jade',
         'compass:server'
       ],
       test: [
@@ -439,7 +446,7 @@ module.exports = function (grunt) {
       ],
       dist: [
         'coffee',
-        'slim',
+        'jade',
         'compass:dist',
         'imagemin',
         'svgmin'
@@ -481,8 +488,9 @@ module.exports = function (grunt) {
     }
   });
 
-  grunt.loadNpmTasks('grunt-slim');
+  grunt.loadNpmTasks('grunt-contrib-jade');
   grunt.loadNpmTasks('grunt-connect-proxy');
+  grunt.loadNpmTasks('grunt-mkdir');
 
   grunt.registerTask('serve', function (target) {
     if (target === 'dist') {
@@ -538,7 +546,7 @@ module.exports = function (grunt) {
 };
 CODE
 
-  run "npm install grunt-slim grunt-connect-proxy --save-dev"
+  run "npm install grunt-contrib-jade grunt-connect-proxy grunt-mkdir --save-dev"
 end
 
 git :init
