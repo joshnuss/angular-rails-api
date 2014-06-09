@@ -14,8 +14,9 @@ rails-api new <your-app-name> \
 ## Features
 
 - [rails-api](https://github.com/rails-api/rails-api)
+- [spring](https://github.com/rails/spring)
 - [grunt](http://gruntjs.com/)
-- [slim](https://github.com/slim-template/slim)
+- [jade](http://jade-lang.com/)
 - [sass](http://sass-lang.com/)
 - [coffeescript](http://coffeescript.org/)
 - [bootstrap](http://getbootstrap.com/)
@@ -35,8 +36,8 @@ rails-api new <your-app-name> \
 
 - To build the frontend: `cd frontend && grunt build`
 - To run the frontend server: `cd frontend && grunt serve`
-- To run the rails server: `rails server`
-- To run the rails specs: `rake spec`
+- To run the rails server: `bin/rails server`
+- To run the rails specs: `bin/rake spec`
 - To run the angular specs: `cd frontend && grunt test`
 
 ## Development Mode
